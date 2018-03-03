@@ -1,0 +1,9 @@
+POST url/user/encryption?id=/new_keys -> //Creates new random keys for this RSA instance -RSA.new_key
+POST url/user/encryption?id=/new_keys?n=10&e=20&d=30 //Creates new keys that are chosen from the user - RSA.initialize
+
+GET url/user/encryption?id=/public //Returns n, e -RSA.n, RSA.e
+GET url/user/encryption?id=/private //Returns d -RSA.d
+GET url/user/encryption?id=/all //Returns n, e and d -RSA.n, RSA.e, RSA.d
+
+POST url/user/encryption?id=/encrypt?m= -> //Encrypts a message and returns id -RSA.encrypt
+GET url/user/encryption?id=/decrypt?id= -> //Returns a message using its id -RSA.decrypt 
